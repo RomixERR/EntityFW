@@ -10,16 +10,11 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Data.Entity;
 using System.Diagnostics;
 
 namespace EntityFW
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private string SelectedEmail="";
@@ -28,16 +23,13 @@ namespace EntityFW
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void loadBtn_Click(object sender, RoutedEventArgs e)
-        {
             context.Customers.Load();
             dataGridCustomers.ItemsSource = context.Customers.Local.ToBindingList();
 
             context.Orders.Load();
             dataGridOrders.ItemsSource = context.Orders.Local.ToBindingList();
-        }
+        } 
 
         private void btNoFilter_Click(object sender, RoutedEventArgs e)
         {
