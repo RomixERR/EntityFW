@@ -26,5 +26,6 @@ namespace EntityFW
         }
     
         public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
     }
 }
